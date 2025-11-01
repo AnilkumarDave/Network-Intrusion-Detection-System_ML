@@ -53,12 +53,6 @@ Network security is a crucial aspect of cybersecurity, and **Intrusion Detection
 - Python 3.11
 - Libraries: pandas, numpy, scikit-learn, imbalanced-learn, seaborn, matplotlib, joblib
 
-**Proposed Workflow Diagram:**  
-![Workflow](docs/nids_workflow.png)  
-> You can create a simple workflow diagram showing dataset → preprocessing → training → evaluation → visualization and save as `docs/nids_workflow.png`.
-
----
-
 ## 📊 Key Performance Indicators (KPIs)
 
 | Model         | Accuracy | Precision | Recall  | F1-Score | ROC-AUC |
