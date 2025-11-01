@@ -149,11 +149,24 @@ Network security is a crucial aspect of cybersecurity, and **Intrusion Detection
 ---
 
 ## ⚡ Quick Setup Guide
+---
 
-1️⃣ **Clone the repository**
+## 🛡️ Large File Handling (Git LFS)
+
+Some project files (datasets and trained ML models) are **larger than GitHub’s 100 MB limit**, so they are tracked using **Git Large File Storage (LFS)**.  
+
+**Steps to clone and get all files:**
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/network-intrusion-ml.git
+# Install Git LFS (if not already installed)
+git lfs install
+
+# Clone repository
+1️⃣ git clone https://github.com/AnilkumarDave/Network-Intrusion-Detection-System_ML.git
+
+# Pull LFS-tracked files
+git lfs pull
+
 cd network-intrusion-ml
 
 2️⃣ Create a virtual environment and install dependencies
@@ -170,6 +183,14 @@ jupyter notebook network_intrusion_detection.ipynb
 4️⃣ Results
 
 Models, metrics, and visualizations will be saved automatically in results/.
+
+Tracked large files:
+
+results/processed_train.csv
+
+results/processed_test.csv
+
+results/models/*.joblib
 
 📝 Modernisation Note
 
