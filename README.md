@@ -142,33 +142,35 @@ Network security is a crucial aspect of cybersecurity, and **Intrusion Detection
 
 ---
 
-##📝 Modernisation Note
+## 📝 Modernisation Note
 
--Originally built: 26 June – 06 September 2023 (Academic project)
--Uploaded & documented for GitHub: October 2025
--Modern updates & improvements for public sharing:
--Cleaned project files for clarity and reproducibility.
--Added modular Python scripts (src/) for preprocessing, training, evaluation, and visualization.
--Included pre-trained model .joblib files.
--Organized results into results/ for metrics, figures, and comparisons.
--Compatible with Python 3.11 and latest libraries.
+- **Originally built:** 26 June – 06 September 2023 (Academic project)  
+- **Uploaded & documented for GitHub:** October 2025  
+- **Modern updates & improvements for public sharing:**  
+  - Cleaned project files for clarity and reproducibility.  
+  - Added modular Python scripts (`src/`) for preprocessing, training, evaluation, and visualization.  
+  - Included pre-trained model `.joblib` files.  
+  - Organized results into `results/` for metrics, figures, and comparisons.  
+  - Compatible with Python 3.11 and latest libraries.  
 
-##📜 Disclaimer
+## 📜 Disclaimer
 
--This project was developed purely as an academic exercise as part of MSc coursework in Information Security & Digital Forensics.
--The dataset used (KDD Cup 1999) is outdated and for educational purposes only.
--Results are illustrative and may not reflect real-world network behavior.
--This project does not provide any guarantee of accuracy, security, or reliability for operational or production systems.
--Users and researchers are responsible for verifying and adapting methods before applying in real environments.
+- This project was developed purely as an academic exercise as part of MSc coursework in Information Security & Digital Forensics.  
+- The dataset used (KDD Cup 1999) is outdated and for educational purposes only.  
+- Results are illustrative and may not reflect real-world network behavior.  
+- This project does not provide any guarantee of accuracy, security, or reliability for operational or production systems.  
+- Users and researchers are responsible for verifying and adapting methods before applying in real environments.  
 
-⚠️ The purpose of this repository is to demonstrate machine learning techniques for intrusion detection in an academic context only.
+⚠️ **The purpose of this repository is to demonstrate machine learning techniques for intrusion detection in an academic context only.**
 
-##🧩 Conclusion
--The Network Intrusion Detection System (NIDS) demonstrates the application of machine learning in cybersecurity.
--AdaBoost achieved perfect scores on the dataset.
--Provides a complete pipeline: preprocessing, training, evaluation, visualization.
--Supports academic analysis and comparison of ML classifiers.
--Serves as a foundation for future real-time intrusion detection systems.
+## 🧩 Conclusion
+
+- The Network Intrusion Detection System (NIDS) demonstrates the application of machine learning in cybersecurity.  
+- AdaBoost achieved perfect scores on the dataset.  
+- Provides a complete pipeline: preprocessing, training, evaluation, visualization.  
+- Supports academic analysis and comparison of ML classifiers.  
+- Serves as a foundation for future real-time intrusion detection systems.
+
 
 
 ## ⚡ Quick Setup Guide
