@@ -1,10 +1,3 @@
----
-title: "One-Page Summary — NIDS using Machine Learning"
-author: "Anilkumar Dave"
-geometry: margin=1in
-fontsize: 11pt
----
-
 # 🛡️ One-Page Summary — Network Intrusion Detection System (NIDS) using Machine Learning
 
 **Student:** Anilkumar Dave  
