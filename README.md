@@ -11,24 +11,102 @@ This repository contains an academic project demonstrating a **Machine Learning-
 
 ## 🏫 Project Overview
 
-Network security is a crucial aspect of cybersecurity, and **Intrusion Detection Systems (IDS)** play a key role in monitoring network traffic for suspicious activity. This project implements a **data-driven IDS** using machine learning, allowing for the detection of network intrusions based on historical data.
+Network security is a crucial aspect of cybersecurity, and **Intrusion Detection Systems (IDS)** play a key role in monitoring network traffic for suspicious activity. This project implements a **data-driven IDS** using machine learning, allowing for the detection of network intrusions based on historical data. he aim is to distinguish between normal traffic and
+different categories of attacks (e.g. DoS, Probe, R2L, U2R).
 
 **Key Features:**
-- Handles both binary classification (normal vs attack) and multi-class attack detection.
-- Preprocessing pipeline includes encoding, scaling, and balancing (SMOTE) of imbalanced datasets.
-- Supports multiple classifiers: **GaussianNB, RandomForest, KNN, SVC, and AdaBoost**.
-- Generates performance metrics: accuracy, precision, recall, F1-score, ROC-AUC, and confusion matrices.
-- Provides visual comparisons of model performance.
+- Data cleaning and feature engineering for NSL-KDD
+- Training and comparison of multiple classifiers (e.g. Random Forest, Gradient Boosting)
+- Evaluation using accuracy, precision, recall and F1-score
+- Saving the best model for later prediction
+- Providing a simple API layer so that other systems can query the trained model
 
 ---
 
 ## 🎯 Project Objectives
 
-- Build a reliable ML-based IDS for detecting network intrusions.
-- Compare the performance of multiple classifiers on imbalanced datasets.
-- Provide a reproducible pipeline for preprocessing, training, evaluation, and visualization.
-- Highlight the application of ML techniques in cybersecurity research.
-- Create an academic reference project demonstrating ML for intrusion detection.
+- Build a reproducible ML pipeline for network intrusion detection  
+- Evaluate different algorithms and choose a suitable model  
+- Expose the model via a small REST API for integration and testing  
+- Demonstrate how security and networking projects can be combined with modern ML tooling  
+
+---
+
+📂 Project Structure (high level)
+
+- `data/` – dataset files (not included in the repo if large)  
+- `notebooks/` – Jupyter notebooks for exploration and model development  
+- `src/` – Python modules for preprocessing, training and evaluation  
+- `models/` – saved models (e.g. `best_model.pkl`)  
+- `api/` – Flask app exposing the trained model via a REST API  
+- `automation/` – Java RestAssured tests for the API  
+- `README.md` – project documentation 
+
+## 🌐 API Layer (`/api`)
+
+The `/api` folder contains a small Flask application which:
+
+- Loads the trained model (for example from `models/best_model.pkl`)  
+- Exposes a `/predict` endpoint that accepts JSON with feature values  
+- Returns a JSON response with fields such as `prediction` and `probabilities`  
+
+See `api/README.md` for details.
+
+## 🔧 API Test Automation (`/automation`)
+
+The `/automation` folder contains a Java project that uses:
+
+- **JUnit 5** for structuring tests  
+- **RestAssured** for calling the `/predict` endpoint  
+- **Maven** for dependency management and builds  
+
+Example checks include:
+
+- `/health` endpoint returns HTTP 200  
+- `/predict` returns HTTP 200 for valid JSON input  
+- Response body contains expected JSON fields  
+
+See `automation/README.md` for more detail.
+
+## 🚀 Quick Start (ML + API)
+
+1. Train or load an existing model using the Python code/notebooks.  
+2. Ensure the trained model is saved at the path expected by the Flask app,
+   e.g. `models/best_model.pkl`.  
+3. From the `api` folder, install dependencies and run the Flask app:
+
+```bash
+pip install -r requirements.txt
+python app.py
+```
+
+4. The API will listen on `http://127.0.0.1:5000` by default.  
+   - `GET /health` – simple health check  
+   - `POST /predict` – send JSON with feature values to get a prediction  
+
+## 🚦 Running API Tests (Java + RestAssured)
+
+From the `automation` folder:
+
+```bash
+mvn clean test
+```
+
+This will run the JUnit tests against the running Flask API instance and
+confirm that the key endpoints are behaving as expected.
+
+## 🧪 CI Integration (Jenkins)
+
+A simple `Jenkinsfile` at the root of the repository demonstrates how this
+project can be used in a CI pipeline:
+
+1. Check out the code  
+2. Optionally start the Flask API (e.g. via a shell script)  
+3. Run `mvn clean test` in the `/automation` folder  
+4. Archive the JUnit test reports  
+
+This shows how an ML-based security project can be exercised automatically
+whenever changes are pushed.
 
 ---
 
